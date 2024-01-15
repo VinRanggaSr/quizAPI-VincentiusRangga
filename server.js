@@ -5,6 +5,7 @@ const port = 5000
 const quizRoute = require("./router/quiz")
 const jobSheetRoute = require("./router/jobsheet")
 const router = require("express").Router();
+const authRoute = require("./router/auth");
 
 app.use(cors());
 app.use(express.json()) //fungsinya agar bisa baca inputan dri form || for parsing application/json
@@ -19,6 +20,7 @@ app.get('/', (req, res) => {
 
 app.use("/api/quizzes", quizRoute)
 app.use("/api/jobsheet", jobSheetRoute)
+app.use(authRoute);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

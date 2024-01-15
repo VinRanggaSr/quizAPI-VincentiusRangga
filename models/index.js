@@ -21,4 +21,5 @@ db.sequlize = sequlize;
 
 // define mode
 db.quizzes = require('./quiz')(sequlize, Sequelize);
+db.user = require('./user')(sequlize, Sequelize);
 module.exports = db;
