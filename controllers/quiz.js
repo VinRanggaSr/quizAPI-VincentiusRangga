@@ -1,5 +1,4 @@
 const db = require("../models");
-const quiz = require("../models/quiz")
 const Quiz = db.quizzes;
 
 // CREATE : menambahkan data kedalam tabel quiz
@@ -24,12 +23,12 @@ exports.getAll = async (req, res) => {
         const quizzes = await Quiz.findAll()
         res.json({
             message: "quiz retrieved successfully.",
-            data: quizzes, 
+            dataQuiz: quizzes, 
         })
     }catch (error){
         res.status(500).json({
             message: error.message,
-            data: null,
+            dataQuiz: null,
         })
     }
 }
